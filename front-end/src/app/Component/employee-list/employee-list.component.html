@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th colspan="2" align="center">Danh sách đọc</th>
+      </tr>
+      <tr>
+        <th>Tên sách</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees | async">
+        <td *ngIf="employee.read == true">{{employee.name}}</td>
+        <td *ngIf="employee.read"><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Đã đọc</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-create-employee></app-create-employee>
+</div>
